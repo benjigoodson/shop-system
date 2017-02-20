@@ -31,9 +31,15 @@ var app = express();
 // register routes
 require('./app/routes')(app);
 
-// Start listening on the server port 
-app.listen(server_port, function () {
-  console.log("Shop System listening on " + server_ip + ", port " + server_port )
+// Get local IP
+require('dns').lookup(require('os').hostname(), function (err, address, fam) {
+  server_ip = address;
+
+    // Start listening on the server port 
+  app.listen(server_port, function () {
+    console.log("Listening on " + server_ip + ", port " + server_port )
+  });
+
 });
 
 // expose app
