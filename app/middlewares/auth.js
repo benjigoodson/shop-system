@@ -17,7 +17,7 @@ module.exports = function (app) {
         // Headers to allow
         res.setHeader('Access-Control-Allow-Headers', '*, authorization');
 
-        // Allow senidng of cookies for sessions etc
+        // Allow sending of cookies for sessions etc
         res.setHeader('Access-Control-Allow-Credentials', true);
 
         next();
