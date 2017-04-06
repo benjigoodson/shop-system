@@ -33,10 +33,6 @@ print("Dropped transaction collection.");
 
 print("\nAll existing data has been removed.\n");
 
-
-
-
-
 //// Products ////
 var newProducts = [];
 
@@ -59,9 +55,6 @@ if(productNames.length == products.length) {
     print("Not all products created!");
     outcome = false;
 }
-
-
-
 
 //// Shops ////
 var newShops = [ ];
@@ -101,9 +94,6 @@ if(NUM_SHOPS == shops.length) {
     outcome = false;
 }
 
-
-
-
 //// Transactions ////
 var newTransactions = [ ];
 
@@ -142,15 +132,12 @@ for(var transactionCounter = 0; transactionCounter < shops.length; transactionCo
         db.transaction.insert(newTransaction);
 
     }
-
 }
 
 var transactions = db.transaction.find().toArray();
 
 // Check all transactions have been inserted
 print(NUM_TRANSACTIONS + " transactions have been created for each shop.");
-
-
 
 //// Private functions ////
 
